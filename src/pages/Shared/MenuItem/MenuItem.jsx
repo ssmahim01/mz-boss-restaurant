@@ -9,7 +9,7 @@ const MenuItem = ({item}) => {
                 <h3 className="text-lg uppercase text-gray-700 font-bold">{name} ------ </h3>
                 <p className="text-[#BB8506] font-semibold">${price}</p>
                 </div>
-                <p className="text-gray-600 font-medium md:w-11/12">{recipe}</p>
+                <p className="text-gray-600 font-medium md:w-4/5 w-11/12">{recipe}</p>
             </div>
         </div>
     );

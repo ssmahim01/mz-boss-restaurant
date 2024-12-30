@@ -1,19 +1,26 @@
 import { NavLink } from "react-router-dom";
+import cartImg from "../../../assets/icon/cart.png";
 import "./Navbar.css";
 
 const Navbar = () => {
     const options = <>
       <NavLink to="/">Home</NavLink>
+          <NavLink to="/contact-us">Contact Us</NavLink>
+          <NavLink to="/dashboard">Dashboard</NavLink>
           <NavLink to="/our-menu">Our Menu</NavLink>
-          <NavLink to="/order/salad">Order Food</NavLink>
+          <NavLink className="flex items-center" to="/order/salad">
+          Our Shop
+          <img className="w-12 h-10" src={cartImg} alt="Cart Icon" />
+          </NavLink>
+          <NavLink to="/sign-in">Sign-In</NavLink>
     </>
 
   return (
     <>
-    <div className="navbar fixed z-10 bg-opacity-30 bg-black/40">
+    <div className="navbar fixed z-10 bg-opacity-30 bg-black/40 md:px-16 py-4">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden border border-teal-200 text-teal-400">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -31,20 +38,17 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-56 *:font-bold p-2 shadow-sm"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-56 uppercase *:font-bold p-2 shadow-sm"
           >
           {options}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl text-white font-bold">MZ Boss</a>
+        <a className="btn btn-ghost md:text-2xl text-lg text-white font-bold">MZ Boss</a>
       </div>
-      <div className="navbar-center hidden lg:flex text-white">
-        <ul className="menu menu-horizontal px-1 font-bold *:ml-4">
+      <div className="navbar-end hidden lg:flex text-white">
+        <ul className="menu menu-horizontal items-center px-1 uppercase font-bold *:ml-3">
          {options}
         </ul>
-      </div>
-      <div className="navbar-end">
-        <a className="btn btn-secondary">Button</a>
       </div>
     </div>
     </>

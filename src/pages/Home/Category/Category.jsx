@@ -13,7 +13,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const Category = () => {
   return (
-    <section className="max-w-screen-xl mx-auto">
+    <section className="md:w-full w-11/12 max-w-screen-xl mx-auto">
         <SectionTitle subHeading={"From 11.00am to 10.00pm"} heading={"Order Online"} />
       <Swiper
         autoplay={true}
@@ -24,7 +24,7 @@ const Category = () => {
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper"
+        className="mySwiper pb-10"
       >
         <SwiperSlide>
           <img className="relative" src={Slide1} alt="Slide image 1" />

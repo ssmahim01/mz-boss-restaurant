@@ -11,22 +11,22 @@ import img6 from "../../../assets/home/06.png";
 const Banner = () => {
   return (
     <Carousel autoPlay={true} interval={3000}>
-      <div className="w-full *:h-[550px]">
+      <div className="w-full *:lg:h-[550px] *:h-96">
         <img src={img1} alt="First image of Banner" />
       </div>
-      <div className="w-full *:h-[550px]">
+      <div className="w-full *:lg:h-[550px] *:h-96">
         <img src={img2} alt="Second image of Banner" />
       </div>
-      <div className="w-full *:h-[550px]">
+      <div className="w-full *:lg:h-[550px] *:h-96">
         <img src={img3} alt="Third image of Banner" />
       </div>
-      <div className="w-full *:h-[550px]">
+      <div className="w-full *:lg:h-[550px] *:h-96">
         <img src={img4} alt="Fourth image of Banner" />
       </div>
-      <div className="w-full *:h-[550px]">
+      <div className="w-full *:lg:h-[550px] *:h-96">
         <img src={img5} alt="Fifth image of Banner" />
       </div>
-      <div className="w-full *:h-[550px]">
+      <div className="w-full *:lg:h-[550px] *:h-96">
         <img src={img6} alt="Sixth image of Banner" />
       </div>
     </Carousel>
