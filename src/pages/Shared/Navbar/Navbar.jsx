@@ -11,13 +11,13 @@ const Navbar = () => {
           </li>
 
           <li>
-          <Link to="/order">Order Food</Link>
+          <Link to="/order/salad">Order Food</Link>
           </li>
     </>
 
   return (
     <>
-    <div className="navbar fixed z-10 bg-opacity-30 *:text-white bg-black/40">
+    <div className="navbar fixed z-10 bg-opacity-30 bg-black/40">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -38,14 +38,14 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-56 *:font-bold p-2 shadow-sm"
           >
           {options}
           </ul>
         </div>
         <a className="btn btn-ghost text-xl font-bold">MZ Boss</a>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex text-white">
         <ul className="menu menu-horizontal px-1">
          {options}
         </ul>
