@@ -1,18 +1,11 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
     const options = <>
-     <li>
-      <Link to="/">Home</Link>
-          </li>
-
-          <li>
-          <Link to="/our-menu">Our Menu</Link>
-          </li>
-
-          <li>
-          <Link to="/order/salad">Order Food</Link>
-          </li>
+      <NavLink to="/">Home</NavLink>
+          <NavLink to="/our-menu">Our Menu</NavLink>
+          <NavLink to="/order/salad">Order Food</NavLink>
     </>
 
   return (
@@ -43,10 +36,10 @@ const Navbar = () => {
           {options}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl font-bold">MZ Boss</a>
+        <a className="btn btn-ghost text-xl text-white font-bold">MZ Boss</a>
       </div>
       <div className="navbar-center hidden lg:flex text-white">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 font-bold *:ml-4">
          {options}
         </ul>
       </div>

@@ -1,6 +1,7 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import "../Featured/Featured.css";
 import featuredImg from "../../../assets/home/featured.jpg";
+import { Link } from "react-router-dom";
 
 const Featured = () => {
   return (
@@ -16,13 +17,17 @@ const Featured = () => {
           <p className="text-lg font-bold">Aug, 2029</p>
           <p className="uppercase">Where can get i some?</p>
           <p>
-           Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Error voluptate facere, deserunt
-            dolores maiores quod nobis quas quasi. Eaque repellat recusandae ad
-            laudantium tempore consequatur consequuntur omnis ullam maxime
-            tenetur.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+            voluptate facere, deserunt dolores maiores quod nobis quas quasi.
+            Eaque repellat recusandae ad laudantium tempore consequatur
+            consequuntur omnis ullam maxime tenetur.
           </p>
-          <button className="mt-4 btn text-white border-0 border-b-4 btn-outline uppercase">Order Now</button>
+
+          <Link to="/order/salad">
+            <button className="mt-4 btn text-white border-0 border-b-4 btn-outline uppercase">
+              Order Now
+            </button>
+          </Link>
         </div>
       </div>
     </div>
