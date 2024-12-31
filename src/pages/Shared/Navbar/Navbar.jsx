@@ -9,10 +9,10 @@ const Navbar = () => {
           <NavLink to="/dashboard">Dashboard</NavLink>
           <NavLink to="/our-menu">Our Menu</NavLink>
           <NavLink className="flex items-center" to="/order/salad">
-          Our Shop
+          Order Food
           <img className="w-12 h-10" src={cartImg} alt="Cart Icon" />
           </NavLink>
-          <NavLink to="/sign-in">Sign-In</NavLink>
+          <NavLink to="/log-in">Log-In</NavLink>
     </>
 
   return (
