@@ -3,13 +3,33 @@ import cartImg from "../../../assets/icon/cart.png";
 import "./Navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        alert("Log Out successful");
+        Swal.fire({
+          icon: "success",
+          title: "Successful",
+          text: "Logged Out Successful",
+          confirmButtonText: "Okay",
+          showClass: {
+            popup: `
+                      animate__animated
+                      animate__fadeInUp
+                      animate__faster
+                    `,
+          },
+          hideClass: {
+            popup: `
+                      animate__animated
+                      animate__fadeOutDown
+                      animate__faster
+                    `,
+          },
+        });
       })
       .catch((error) => console.log(error));
   };

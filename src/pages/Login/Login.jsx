@@ -6,15 +6,17 @@ import {
 import { Helmet } from "react-helmet-async";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import LoginBg from "../../assets/others/authentication2.png";
 import "./Login.css";
-import Swal from "sweetalert2";
 
 const Login = () => {
     const {signInWithEmail} = useContext(AuthContext);
     const [disabled, setDisabled] = useState(true);
+    const location = useLocation();
     const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || "/";
 
     useEffect(() => {
         loadCaptchaEnginge(6);
@@ -47,6 +49,7 @@ const Login = () => {
           icon: "success",
           title: "Successful",
           text: `${user?.displayName} is successfully logged in`,
+          confirmButtonText: "Okay",
           showClass: {
             popup: `
               animate__animated
@@ -63,7 +66,7 @@ const Login = () => {
           }
         });
 
-        navigate("/");
+        navigate(from, {replace: true});
     })
     .catch(error => {
         // console.log(error.message);
@@ -81,14 +84,14 @@ const Login = () => {
       <Helmet>
         <title>MZ Boss | Log-In</title>
       </Helmet>
-      <div className="hero bg-login min-h-screen py-10">
-        <div className="hero-content rounded-lg lg:w-full w-11/12 mx-auto md:p-7 flex-col md:flex-row" style={{
+      <div className="hero bg-login bg-cover bg-center bg-no-repeat min-h-screen py-10">
+        <div className="hero-content rounded-lg lg:w-full w-11/12 mx-auto md:p-7 flex-col lg:flex-row" style={{
             boxShadow: "10px 10px 10px 10px rgba(0, 0, 0, 0.25)"
         }}>
          <figure>
           <img className="w-full h-full" src={LoginBg} alt="Background image of Login" />
          </figure>
-          <div className="card md:w-1/2 max-w-sm">
+          <div className="card lg:w-1/2 max-w-sm">
           <h1 className="md:text-4xl text-3xl text-center font-bold">Login</h1>
             <form className="card-body space-y-3" onSubmit={handleLoginWithEmail}>
               <div className="form-control">
@@ -99,7 +102,7 @@ const Login = () => {
                   type="email"
                   name="email"
                   placeholder="Provide your Email"
-                  className="input input-bordered md:w-full w-72"
+                  className="input input-bordered lg:w-full md:w-96 w-72"
                   required
                 />
               </div>
@@ -111,7 +114,7 @@ const Login = () => {
                   type="password"
                   name="password"
                   placeholder="Provide your Password"
-                  className="input input-bordered md:w-full w-72"
+                  className="input input-bordered lg:w-full md:w-96 w-72"
                   required
                 />
               </div>
@@ -125,12 +128,12 @@ const Login = () => {
                   onBlur={validateTypedCaptcha}
                   name="captcha"
                   placeholder="Type the captcha of above"
-                  className="input input-bordered md:w-full w-72"
+                  className="input input-bordered lg:w-full md:w-96 w-72"
                   required
                 />
               </div>
 
-              <div className="form-control mt-6">
+              <div className="form-control lg:w-full md:w-96 w-72 mt-6">
                 <input
                   className="btn bg-[#D1A054] text-lg text-white font-bold"
                   type="submit"
