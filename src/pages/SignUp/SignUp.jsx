@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const {createUser} = useContext(AuthContext);
@@ -87,6 +88,8 @@ const SignUp = () => {
               <input type="submit" value="Sign Up" className="btn bg-[#D1A054] text-lg text-white font-bold" />
             </div>
           </form>
+
+          <p className="text-[#D1A054] md:text-xl text-lg font-semibold text-center px-4 pb-4"><small>Already Have An Account? <Link to="/log-in" className="underline font-bold">Go to Log in</Link></small></p>
         </div>
       </div>
     </div>
