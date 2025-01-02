@@ -44,9 +44,8 @@ const Navbar = () => {
       <NavLink to="/contact-us">Contact Us</NavLink>
       <NavLink to="/dashboard">Dashboard</NavLink>
       <NavLink to="/our-menu">Our Menu</NavLink>
-      <NavLink className="flex items-center" to="/order/salad">
-        Order Food
-      </NavLink>
+      <NavLink to="/order/salad">Order Food</NavLink>
+      {/* <NavLink to="/secret">Secret</NavLink> */}
 
       <NavLink to="/">
         <button className="btn btn-ghost *:text-white">
