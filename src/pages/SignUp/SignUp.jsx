@@ -6,9 +6,12 @@ import { Link, useNavigate } from "react-router-dom";
 import signUpBg from "../../assets/others/authentication2.png";
 import authenticationBg from "../../assets/others/authentication.png";
 import Swal from "sweetalert2";
+import { usePublicAxios } from "../../hooks/usePublicAxios";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
+  const axiosPublic = usePublicAxios();
   const navigate = useNavigate();
 
   const {
@@ -26,16 +29,26 @@ const SignUp = () => {
 
       updateUserProfile(data.name, data.photoURL)
         .then(() => {
-          reset();
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: `${loggedUser?.displayName} is successfully created an account`,
-            showConfirmButton: false,
-            timer: 2500,
-          });
+          const userInfo = {
+            name: data.name,
+            email: data.email
+          }
 
-          navigate("/");
+          axiosPublic.post("/users", userInfo)
+          .then(res => {
+            if(res.data.insertedId){
+              reset();
+
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: `${loggedUser?.displayName} is successfully created an account`,
+                showConfirmButton: false,
+                timer: 2500,
+              });
+              navigate("/");
+            }
+          })
         })
         .catch((error) => {
           Swal.fire({
@@ -174,6 +187,8 @@ const SignUp = () => {
               </Link>
             </small>
           </p>
+
+          <SocialLogin />
         </div>
       </div>
     </div>

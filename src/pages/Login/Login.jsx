@@ -10,6 +10,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import LoginBg from "../../assets/others/authentication2.png";
 import "./Login.css";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
     const {signInWithEmail} = useContext(AuthContext);
@@ -144,6 +145,8 @@ const Login = () => {
             </form>
 
             <p className="text-[#D1A054] md:text-xl text-lg font-semibold text-center px-4 pb-4"><small>New Here? <Link to="/sign-up" className="underline font-bold">Create a New Account</Link></small></p>
+
+            <SocialLogin />
           </div>
         </div>
       </div>
