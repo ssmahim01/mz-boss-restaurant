@@ -3,6 +3,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { useAxiosSecure } from "../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
@@ -53,9 +54,20 @@ const Cart = () => {
           Total Price: ${totalPrice}
         </h2>
 
-        <button className="uppercase btn bg-[#D1A054] text-white font-bold">
-          Pay
-        </button>
+        {cart.length ? (
+          <Link to="/dashboard/payment">
+            <button className="uppercase btn bg-[#D1A054] text-white font-bold">
+              Pay
+            </button>
+          </Link>
+        ) : (
+          <button
+            disabled
+            className="uppercase btn bg-[#D1A054] text-white font-bold"
+          >
+            Pay
+          </button>
+        )}
       </div>
 
       <div className="overflow-x-auto mt-5 bg-white rounded-lg">
