@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { useForm } from "react-hook-form";
 import { useAxiosSecure } from "../../../hooks/useAxiosSecure";
@@ -6,7 +6,8 @@ import Swal from "sweetalert2";
 import { usePublicAxios } from "../../../hooks/usePublicAxios";
 
 const UpdateItem = () => {
-  const {name, category, price, recipe, _id} = useLoaderData();
+  const { name, category, price, recipe, _id } = useLoaderData();
+  const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
   const axiosPublic = usePublicAxios();
   const imageHostingKey = import.meta.env.VITE_IMAGE_HOSTING_KEY;
@@ -44,6 +45,8 @@ const UpdateItem = () => {
           showConfirmButton: false,
           timer: 3000,
         });
+
+        navigate("/dashboard/manage-items");
       }
     }
 
@@ -52,10 +55,7 @@ const UpdateItem = () => {
 
   return (
     <div>
-      <SectionTitle
-        heading={"Update The Item Info"}
-        subHeading={`${name}`}
-      />
+      <SectionTitle heading={"Update The Item Info"} subHeading={`${name}`} />
 
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -116,7 +116,7 @@ const UpdateItem = () => {
               <span className="label-text">Recipe Details</span>
             </label>
             <textarea
-            defaultValue={recipe}
+              defaultValue={recipe}
               {...register("recipe")}
               placeholder="Recipe Details"
               className="textarea textarea-bordered textarea-lg w-full"

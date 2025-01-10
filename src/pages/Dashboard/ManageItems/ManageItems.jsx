@@ -6,7 +6,7 @@ import { useAxiosSecure } from "../../../hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
 
 const ManageItems = () => {
-  const [menu, refetch] = useMenu();
+  const [menu, , refetch] = useMenu();
   const axiosSecure = useAxiosSecure();
   //   console.log(menu);
 
