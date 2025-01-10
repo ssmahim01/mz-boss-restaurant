@@ -6,9 +6,11 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from "../../../hooks/useCart";
+import useAdmin from "../../../hooks/useAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [isAdmin] = useAdmin();
   const [cart] = useCart();
 
   const handleLogOut = () => {
@@ -45,6 +47,15 @@ const Navbar = () => {
       <NavLink to="/dashboard">Dashboard</NavLink>
       <NavLink to="/our-menu">Our Menu</NavLink>
       <NavLink to="/order/salad">Order Food</NavLink>
+
+      {
+        user && isAdmin && <NavLink to="/dashboard/admin-home">Admin Home</NavLink>
+      }
+
+      {
+        user && !isAdmin && <NavLink to="/dashboard/user-home">User Home</NavLink>
+      }
+
       {/* <NavLink to="/secret">Secret</NavLink> */}
 
       <NavLink to="/">
@@ -73,7 +84,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar fixed z-10 bg-opacity-30 bg-black/40 md:px-16 py-4">
+      <div className="navbar fixed z-10 bg-opacity-30 bg-black/40 md:px-16 py-2">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -107,7 +118,7 @@ const Navbar = () => {
             MZ Boss
           </a>
         </div>
-        <div className="navbar-end hidden lg:flex text-white">
+        <div className="navbar-center hidden lg:flex text-white">
           <ul className="menu menu-horizontal items-center px-1 uppercase font-bold *:ml-3">
             {options}
           </ul>
