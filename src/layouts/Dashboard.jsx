@@ -25,12 +25,12 @@ const Dashboard = () => {
       </Helmet>
 
       {/* Dashboard Side bar */}
-      <div className="p-4 w-72 min-h-screen bg-orange-400">
-        <h2 className="ml-5 text-3xl uppercase font-extrabold mb-8">
+      <div className="p-4 md:w-72 md:min-h-screen bg-orange-400">
+        <h2 className="ml-5 text-3xl uppercase font-extrabold md:mb-8 mb-4">
           MZ Boss <br />{" "}
           <span className="leading-6 text-lg font-semibold">Restaurant</span>
         </h2>
-        <ul className="menu *:font-bold">
+        <ul className="menu *:font-bold md:flex-col flex-row flex-wrap">
           {isAdmin ? (
             <>
               <li>

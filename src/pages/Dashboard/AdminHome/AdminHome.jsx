@@ -163,6 +163,7 @@ const AdminHome = () => {
             </Bar>
           </BarChart>
         </div>
+        
         <div className="lg:w-1/2">
         <PieChart width={400} height={400}>
           <Pie
