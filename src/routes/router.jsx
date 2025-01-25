@@ -18,11 +18,13 @@ import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -61,6 +63,7 @@ const router = createBrowserRouter([
         <Dashboard />
       </PrivateRoute>
     ),
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/dashboard/user-home",

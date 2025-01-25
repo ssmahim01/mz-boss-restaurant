@@ -1,15 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import {
-    FaBook,
-  FaCalendar,
-  FaEnvelope,
   FaHome,
   FaList,
   FaShoppingCart,
   FaUsers,
   FaUtensils,
 } from "react-icons/fa";
-import { MdMenuBook, MdOutlineRateReview } from "react-icons/md";
+import { MdMenuBook } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
@@ -52,12 +49,6 @@ const Dashboard = () => {
               </li>
 
               <li>
-                <NavLink to="/dashboard/manage-bookings">
-                  <FaBook /> Manage Bookings
-                </NavLink>
-              </li>
-
-              <li>
                 <NavLink to="/dashboard/users">
                   <FaUsers /> All Users
                 </NavLink>
@@ -85,17 +76,6 @@ const Dashboard = () => {
                 </NavLink>
               </li>
 
-              <li>
-                <NavLink to="/dashboard/review">
-                  <MdOutlineRateReview /> Add Review
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink to="/dashboard/bookings">
-                  <FaCalendar /> My Bookings
-                </NavLink>
-              </li>
               <div className="divider"></div>
             </>
           )}
@@ -114,12 +94,6 @@ const Dashboard = () => {
             </NavLink>
           </li>
 
-          <li>
-            <NavLink to="/contact">
-              <FaEnvelope />
-              Contact
-            </NavLink>
-          </li>
         </ul>
       </div>
 

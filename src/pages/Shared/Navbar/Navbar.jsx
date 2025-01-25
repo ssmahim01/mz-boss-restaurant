@@ -43,7 +43,6 @@ const Navbar = () => {
   const options = (
     <>
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/contact-us">Contact Us</NavLink>
       <NavLink to="/dashboard">Dashboard</NavLink>
       <NavLink to="/our-menu">Our Menu</NavLink>
       <NavLink to="/order/salad">Order Food</NavLink>
