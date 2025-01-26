@@ -45,12 +45,12 @@ const Cart = () => {
     <div>
       <SectionTitle subHeading={"My Cart"} heading={"Wanna Add More?"} />
 
-      <div className="flex justify-evenly mt-8">
-        <h2 className="text-4xl font-bold text-center uppercase">
+      <div className="flex md:flex-row flex-col md:justify-evenly md:items-center gap-3 items-start mt-8">
+        <h2 className="lg:text-4xl text-2xl font-bold text-center uppercase">
           Total Orders: {cart.length}
         </h2>
 
-        <h2 className="text-4xl font-bold text-center">
+        <h2 className="lg:text-4xl text-2xl font-bold text-center">
           Total Price: ${totalPrice}
         </h2>
 

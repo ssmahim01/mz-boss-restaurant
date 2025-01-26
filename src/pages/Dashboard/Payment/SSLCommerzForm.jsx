@@ -41,7 +41,7 @@ const SSLCommerzForm = () => {
       <div>
         <form onSubmit={handlePayment}>
           <div className="flex flex-col gap-4">
-            <div className="flex md:flex-row flex-col justify-between items-center">
+            <div className="flex md:flex-row flex-col justify-between items-center gap-2">
               <div className="md:w-1/2 form-control flex-row gap-2">
                 <label className="label">
                   <span className="label-text text-lg font-bold">Email: </span>
