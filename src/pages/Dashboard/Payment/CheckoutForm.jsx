@@ -5,6 +5,7 @@ import useAuth from "../../../hooks/useAuth";
 import { useAxiosSecure } from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const CheckoutForm = () => {
   const [error, setError] = useState("");
@@ -106,6 +107,8 @@ const CheckoutForm = () => {
 
   return (
     <div>
+      <SectionTitle heading={"Stripe"} subHeading={"Provide valid card number"} />
+
       <form onSubmit={handleSubmit}>
         <CardElement
           options={{

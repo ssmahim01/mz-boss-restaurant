@@ -120,7 +120,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/update-item/:id",
         loader: ({ params }) =>
-          fetch(`https://mz-boss-restaurant-server.vercel.app/menu/${params.id}`),
+          fetch(`http://localhost:5000/menu/${params.id}`),
         element: (
           <AdminRoute>
             {" "}
